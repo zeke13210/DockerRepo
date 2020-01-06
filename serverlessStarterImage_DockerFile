@@ -1,0 +1,12 @@
+#builds base ubuntu image for using aws cli and preps your env to run serverless
+FROM ubuntu
+WORKDIR /app
+RUN apt-get update -y
+RUN apt install python-pip -y
+RUN pip install awscli
+RUN apt-get install npm -y
+RUN npm install serverless -g -y 
+RUN serverless install --url https://github.com/AnomalyInnovations/serverless-nodejs-starter --name notes-app
+RUN npm install
+RUN npm insatll aws-sdk --save
+RUN npm install uuid --save
