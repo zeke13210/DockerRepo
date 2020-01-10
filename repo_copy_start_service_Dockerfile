@@ -1,0 +1,10 @@
+FROM zeke13210/walii
+
+WORKDIR /app/
+
+COPY ./walii-api/ .
+
+RUN npm install
+
+
+#CMD ["node", "src/app-test.js"]
