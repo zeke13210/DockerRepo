@@ -1,0 +1,10 @@
+#builds base ubuntu image for using aws cli and preps your env to run serverless
+FROM meetmytypesmobile
+
+RUN useradd -ms /bin/bash test
+
+USER test
+
+WORKDIR /app/
+
+
