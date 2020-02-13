@@ -1,10 +1,10 @@
 #builds base ubuntu image for using aws cli and preps your env to run serverless
 FROM meetmytypesmobile
 
-RUN useradd -ms /bin/bash test
+RUN apt-get install sudo
+#creates new user and adds to sudo group to allow installs
+RUN useradd -ms /bin/bash test && echo "test:test" | chpasswd && adduser test sudo
 
 USER test
 
 WORKDIR /app/
-
-
